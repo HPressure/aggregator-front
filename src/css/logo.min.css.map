@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,AAAC,CACJ,KAAK,CAAE,KAAK,CACZ,WAAW,CAAE,UAAU,CACvB,WAAW,CAAE,IAAI,CASlB,AAZD,AAIE,KAJG,CAIH,IAAI,AAAC,CACH,OAAO,CAAE,YAAY,CACrB,WAAW,CAAE,KAAK,CAClB,UAAU,CAAE,OAAO,CACnB,OAAO,CAAE,YAAY,CACrB,aAAa,CAAE,KAAK,CACpB,KAAK,CAAE,IAAI,CACZ",
+    "sources": [
+        "../sass/logo.scss"
+    ],
+    "names": [],
+    "file": "logo.min.css"
+}

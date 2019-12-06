@@ -2,12 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Logo from "./Logo";
 function AppHeader() {
   return (
     <React.Fragment>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="light"
+        variant="light"
+        sticky="top"
+      >
         <Navbar.Brand>
           <Link to="/">
             <Logo />

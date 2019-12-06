@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,cAAc,AAAC,CCDb,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,MAAM,CACjB,KAAK,CAAE,KAAK,CACZ,aAAa,CAAE,IAAI,CDUpB,AAZD,AAEE,cAFY,CAEZ,YAAY,AAAC,CCGb,aAAa,CAAE,IAAI,CDDlB,AAJH,AAKE,cALY,CAKZ,kBAAkB,AAAC,CACjB,OAAO,CAAE,IAAI,CCEf,UAAU,CAAE,iBAAiB,CAC7B,WAAW,CAAE,IAAI,CACjB,QAAQ,CAAE,MAAM,CDCf,AAXH,AAQI,cARU,CAKZ,kBAAkB,CAGhB,iBAAiB,AAAC,CAChB,KAAK,CAAE,IAAI,CACZ",
+    "sources": [
+        "../sass/TheatreBlock.scss",
+        "../sass/_variables.scss"
+    ],
+    "names": [],
+    "file": "TheatreBlock.min.css"
+}

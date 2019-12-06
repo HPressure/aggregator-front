@@ -1,0 +1,15 @@
+@import "variables";
+
+.theatre-block {
+  @include mainBlock;
+  .main-header {
+    @include headerMainStyle;
+  }
+  .theatre-container {
+    display: flex;
+    @include mainContainer;
+    .theatre-carousel {
+      width: 100%;
+    }
+  }
+}

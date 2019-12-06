@@ -1,0 +1,19 @@
+@import "variables";
+.news-block {
+  @include mainBlock;
+  .main-header {
+    @include headerMainStyle;
+  }
+  .news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mainContainer;
+    // height: 300px;
+    // transition: max-height 0.5s ease-in;
+  }
+  .btn-expand-news {
+    width: 200px;
+    margin: auto;
+  }
+}

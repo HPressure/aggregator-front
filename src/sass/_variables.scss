@@ -1,0 +1,14 @@
+@mixin mainBlock {
+  display: flex;
+  flex-flow: column;
+  width: 920px;
+  margin-bottom: 30px;
+}
+@mixin headerMainStyle {
+  margin-bottom: 10px;
+}
+@mixin mainContainer {
+  border-top: 1px solid #ebecec;
+  padding-top: 20px;
+  overflow: hidden;
+}

@@ -19,14 +19,22 @@ class NewsBlock extends React.Component {
         });
       });
   }
-  handleClick = () => {
+  handleExpandNewsClick = () => {
     this.setState(prevState => {
       let btn = prevState.newsBlockState;
       return { newsBlockState: !btn };
     });
   };
   render() {
-    console.log(this.state.data);
+    const objarray = this.state.data.map(item => {
+      return (
+        <NewsCard
+          img={item.newsImg}
+          title={item.newsTitle}
+          url={item.newsURL}
+        />
+      );
+    });
     return (
       <div className="news-block">
         <h2 className="main-header">Новости</h2>
@@ -36,7 +44,7 @@ class NewsBlock extends React.Component {
             maxHeight: this.state.newsBlockState ? "min-content" : "300px"
           }}
         >
-          <NewsCard
+          {/* <NewsCard
             img="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
             title="Видео с полигона Архангельска: смотрим, как разгружают мусор из Сабетты"
           />
@@ -51,11 +59,12 @@ class NewsBlock extends React.Component {
           <NewsCard
             img="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
             title="Видео с полигона Архангельска: смотрим, как разгружают мусор из Сабетты"
-          />
+          /> */}
+          {objarray}
         </div>
         <Button
           variant="outline-primary"
-          onClick={this.handleClick}
+          onClick={this.handleExpandNewsClick}
           className="btn-expand-news"
         >
           {this.state.newsBlockState ? "Свернуть" : "Больше новостей"}

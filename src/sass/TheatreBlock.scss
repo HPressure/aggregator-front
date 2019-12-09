@@ -7,6 +7,8 @@
   }
   .theatre-container {
     display: flex;
+    justify-content: center;
+    color: #0000006b;
     @include mainContainer;
     .theatre-carousel {
       width: 100%;

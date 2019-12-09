@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/TheatreBlock.min.css";
 import Carousel from "react-multi-carousel";
+import Spinner from "react-bootstrap/Spinner";
 import "react-multi-carousel/lib/styles.css";
 
 class TheatreBlock extends React.Component {
@@ -28,7 +29,7 @@ class TheatreBlock extends React.Component {
     return (
       <div className="theatre-block">
         <h2 className="main-header">Театр</h2>
-        <Carousel responsive={responsive}>
+        {/* <Carousel responsive={responsive}>
           <div>
             <img
               src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
@@ -53,8 +54,12 @@ class TheatreBlock extends React.Component {
               alt=""
             />
           </div>
-        </Carousel>
-        ;<div className="theatre-container"></div>
+        </Carousel> */}
+        <div className="theatre-container">
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
       </div>
     );
   }

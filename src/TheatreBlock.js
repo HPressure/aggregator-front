@@ -1,66 +1,60 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
 import "./css/TheatreBlock.min.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 class TheatreBlock extends React.Component {
   state = {};
   render() {
+    const responsive = {
+      superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+      },
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+      },
+      mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+      }
+    };
     return (
       <div className="theatre-block">
         <h2 className="main-header">Театр</h2>
-
-        <div className="theatre-container">
-          <Carousel className="theatre-carousel">
-            <Carousel.Item>
-              <React.Fragment
-                style={{ display: "flex", width: "100%", flexFlow: "row" }}
-              >
-                <img
-                  style={{ width: "100px", height: "auto" }}
-                  src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-                  alt="First slide"
-                />
-                <img
-                  style={{ width: "100px", height: "auto" }}
-                  src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-                  alt="First slide"
-                />
-              </React.Fragment>
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-        </div>
+        <Carousel responsive={responsive}>
+          <div>
+            <img
+              src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
+              alt=""
+            />
+          </div>
+        </Carousel>
+        ;<div className="theatre-container"></div>
       </div>
     );
   }

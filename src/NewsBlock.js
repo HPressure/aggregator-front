@@ -4,12 +4,20 @@ import NewsCard from "./NewsCard";
 import Button from "react-bootstrap/Button";
 class NewsBlock extends React.Component {
   state = {
-    newsBlockState: 0
+    newsBlockState: 0,
+    data: []
   };
   componentDidMount() {
     this.setState({
       newsBlockState: 0
     });
+    fetch("http://127.0.0.1:8000/api/")
+      .then(data => data.json())
+      .then(jsonData => {
+        this.setState({
+          data: jsonData
+        });
+      });
   }
   handleClick = () => {
     this.setState(prevState => {
@@ -18,6 +26,7 @@ class NewsBlock extends React.Component {
     });
   };
   render() {
+    console.log(this.state.data);
     return (
       <div className="news-block">
         <h2 className="main-header">Новости</h2>

@@ -2,31 +2,38 @@ import React from "react";
 import "./css/NewsBlock.min.css";
 import NewsCard from "./NewsCard";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
+import * as api from "./logic/getData";
 class NewsBlock extends React.Component {
   state = {
     newsBlockState: 0,
-    data: []
+    newsBlockData: [],
+    newsBtnState: 0
   };
   componentDidMount() {
     this.setState({
-      newsBlockState: 0
+      newsBlockState: 0,
+      newsBlockData: [],
+      newsBtnState: 0
     });
-    fetch("http://127.0.0.1:8000/api/")
-      .then(data => data.json())
-      .then(jsonData => {
-        this.setState({
-          data: jsonData
-        });
+    api.get29().then(jsonData => {
+      this.setState({
+        newsBlockData: jsonData,
+        newsBlockState: jsonData.length && 1
       });
+    });
+    // fetchApi("https://ruskino29.ru/api/v2/site/getSite")
+    //   .then(data => data.json())
+    //   .then(data => console.log(data));
   }
   handleExpandNewsClick = () => {
     this.setState(prevState => {
-      let btn = prevState.newsBlockState;
-      return { newsBlockState: !btn };
+      let btn = prevState.newsBtnState;
+      return { newsBtnState: !btn };
     });
   };
   render() {
-    const objarray = this.state.data.map(item => {
+    const News = this.state.newsBlockData.map(item => {
       return (
         <NewsCard
           img={item.newsImg}
@@ -41,33 +48,28 @@ class NewsBlock extends React.Component {
         <div
           className="news-container"
           style={{
-            maxHeight: this.state.newsBlockState ? "min-content" : "300px"
+            maxHeight: this.state.newsBtnState ? "min-content" : "300px"
           }}
         >
-          {/* <NewsCard
-            img="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-            title="Видео с полигона Архангельска: смотрим, как разгружают мусор из Сабетты"
-          />
-          <NewsCard
-            img="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-            title="Видео с полигона Архангельска: смотрим, как разгружают мусор из Сабетты"
-          />
-          <NewsCard
-            img="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-            title="Видео с полигона Архангельска: смотрим, как разгружают мусор из Сабетты"
-          />
-          <NewsCard
-            img="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-            title="Видео с полигона Архангельска: смотрим, как разгружают мусор из Сабетты"
-          /> */}
-          {objarray}
+          <div className="spinner-wrapper">
+            <Spinner
+              animation="border"
+              role="status"
+              style={{ display: this.state.newsBlockState && "none" }}
+            >
+              <span className="sr-only"></span>
+            </Spinner>
+          </div>
+
+          {News}
         </div>
         <Button
+          style={{ display: this.state.newsBlockState == false && "none" }}
           variant="outline-primary"
           onClick={this.handleExpandNewsClick}
           className="btn-expand-news"
         >
-          {this.state.newsBlockState ? "Свернуть" : "Больше новостей"}
+          {this.state.newsBtnState ? "Свернуть" : "Больше новостей"}
         </Button>
       </div>
     );

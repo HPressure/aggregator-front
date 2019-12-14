@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AEAA,AAAA,aAAa,AAAC,CACZ,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,eAAe,CAAE,MAAM,CACvB,KAAK,CAAE,SAAS,CACjB,AFFD,AACE,IADE,CACF,OAAO,AAAC,CACN,UAAU,CAAE,eAAe,CAC3B,aAAa,CAAE,iBAAiB,CAChC,OAAO,CAAE,WAAW,CACpB,aAAa,CAAE,IAAI,CAQpB,AAbH,AAMI,IANA,CACF,OAAO,CAKL,aAAa,AAAC,CACZ,YAAY,CAAE,eAAe,CAC9B,AARL,AASI,IATA,CACF,OAAO,CAQL,CAAC,AAAC,CACA,KAAK,CAAE,OAAO,CACd,eAAe,CAAE,IAAI,CACtB,AAZL,AAcE,IAdE,CAcF,IAAI,AAAC,CACH,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,MAAM,CACjB,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,UAAU,CAC5B",
+    "sources": [
+        "../src/sass/App.scss",
+        "../src/sass/_variables.scss",
+        "../src/sass/_custom-bootstrap.scss"
+    ],
+    "names": [],
+    "file": "App.min.css"
+}

@@ -1,6 +1,8 @@
-@import "variables";
+@import "./variables";
+@import "./custom-bootstrap";
 .news-block {
   @include mainBlock;
+  min-width: 300;
   .main-header {
     @include headerMainStyle;
   }
@@ -9,11 +11,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     @include mainContainer;
-    // height: 300px;
-    // transition: max-height 0.5s ease-in;
   }
   .btn-expand-news {
     width: 200px;
     margin: auto;
   }
 }
+@import "./NewsCard";

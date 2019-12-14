@@ -3,7 +3,7 @@ import "./css/logo.min.css";
 function Logo() {
   return (
     <div id="logo">
-      Arh<span>Now</span>
+      Arh<span>Today</span>
     </div>
   );
 }

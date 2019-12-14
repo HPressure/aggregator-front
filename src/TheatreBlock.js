@@ -56,9 +56,11 @@ class TheatreBlock extends React.Component {
           </div>
         </Carousel> */}
         <div className="theatre-container">
-          <Spinner animation="border" role="status">
-            <span className="sr-only">Loading...</span>
-          </Spinner>
+          <div className="spinner-wrapper">
+            <Spinner animation="border" role="status">
+              <span className="sr-only"></span>
+            </Spinner>
+          </div>
         </div>
       </div>
     );

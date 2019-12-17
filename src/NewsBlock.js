@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/NewsBlock.min.css";
+import "./sass/NewsBlock.scss";
 import NewsCard from "./NewsCard";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
@@ -33,9 +33,10 @@ class NewsBlock extends React.Component {
     });
   };
   render() {
-    const News = this.state.newsBlockData.map(item => {
+    const News = this.state.newsBlockData.map((item, i) => {
       return (
         <NewsCard
+          key={i}
           img={item.newsImg}
           title={item.newsTitle}
           url={item.newsURL}
@@ -43,15 +44,15 @@ class NewsBlock extends React.Component {
       );
     });
     return (
-      <div className="news-block">
-        <h2 className="main-header">Новости</h2>
+      <div className="News">
+        <h2 className="News-Header">Новости</h2>
         <div
-          className="news-container"
+          className="News-Container"
           style={{
-            maxHeight: this.state.newsBtnState ? "min-content" : "300px"
+            maxHeight: this.state.newsBtnState ? "min-content" : "270px"
           }}
         >
-          <div className="spinner-wrapper">
+          <div className="Spinner-Wrap">
             <Spinner
               animation="border"
               role="status"
@@ -67,7 +68,7 @@ class NewsBlock extends React.Component {
           style={{ display: this.state.newsBlockState == false && "none" }}
           variant="outline-primary"
           onClick={this.handleExpandNewsClick}
-          className="btn-expand-news"
+          className="News-Button News-Button_expand"
         >
           {this.state.newsBtnState ? "Свернуть" : "Больше новостей"}
         </Button>

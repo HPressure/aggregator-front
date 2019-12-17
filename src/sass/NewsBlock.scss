@@ -1,20 +1,22 @@
 @import "./variables";
 @import "./custom-bootstrap";
-.news-block {
+.News {
   @include mainBlock;
-  min-width: 300;
-  .main-header {
+  .News-Header {
     @include headerMainStyle;
   }
-  .news-container {
+  .News-Container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     @include mainContainer;
   }
-  .btn-expand-news {
+  .News-Button {
     width: 200px;
-    margin: auto;
+  }
+  .News-Button_expand {
+    margin-top: 20px;
+    align-self: center;
   }
 }
 @import "./NewsCard";

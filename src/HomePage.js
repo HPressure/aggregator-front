@@ -1,12 +1,12 @@
 import React from "react";
 import NewsBlock from "./NewsBlock";
 import TheatreBlock from "./TheatreBlock";
-function MainPage(props) {
+function HomePage(props) {
   return (
     <>
       <NewsBlock />
-      <TheatreBlock />
+      {/* <TheatreBlock /> */}
     </>
   );
 }
-export default MainPage;
+export default HomePage;

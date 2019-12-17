@@ -1,4 +1,20 @@
-.spinner-wrap {
+.navbar {
+  background: #fff !important;
+  border-bottom: 1px solid #ebecec;
+  padding: 0.5rem 5rem;
+  margin-bottom: 30px;
+  .navbar-brand {
+    margin-right: 2rem !important;
+  }
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  button {
+    border: none !important;
+  }
+}
+.Spinner-Wrap {
   display: flex;
   width: 100%;
   justify-content: center;

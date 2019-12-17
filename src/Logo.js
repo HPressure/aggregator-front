@@ -1,9 +1,10 @@
 import React from "react";
-import "./css/logo.min.css";
+import "./sass/Logo.scss";
 function Logo() {
   return (
-    <div id="logo">
-      Arh<span>Today</span>
+    <div className="Logo">
+      <span className="Logo-Left">Arh</span>{" "}
+      <span className="Logo-Right">News</span>
     </div>
   );
 }

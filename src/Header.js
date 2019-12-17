@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Logo from "./Logo";
+import "./sass/Header.scss";
 function AppHeader() {
   return (
     <React.Fragment>

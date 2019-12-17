@@ -1,12 +1,12 @@
-.theatre-block {
+@import "variables";
+.Theatre {
   @include mainBlock;
-  .main-header {
+  .Theatre-Header {
     @include headerMainStyle;
   }
-  .theatre-container {
-    display: flex;
+  .Theatre-Carousel-Wrap {
     @include mainContainer;
-    .theatre-carousel {
+    .Theatre-Carousel {
       width: 100%;
       height: 400px;
     }

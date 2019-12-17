@@ -1,12 +1,11 @@
 import React from "react";
-import "./css/NewsCard.min.css";
 function NewsCard(props) {
   return (
-    <article className="news-card">
-      <a href={props.url} target="_blank">
-        <img className="news-img" src={props.img} alt="" />
-        <div className="news-title-wrap">
-          <h2 className="news-title">{props.title}</h2>
+    <article className="NewsCard">
+      <a href={props.url} className="NewsCard-Link" target="_blank">
+        <img className="NewsCard-Link-Img" src={props.img} alt="" />
+        <div className="NewsCard-Link-Title-Wrap">
+          <h2 className="NewsCard-Link-Title">{props.title}</h2>
         </div>
       </a>
     </article>

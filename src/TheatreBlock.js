@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/TheatreBlock.min.css";
+import "./sass/TheatreBlock.scss";
 import Carousel from "react-multi-carousel";
 import Spinner from "react-bootstrap/Spinner";
 import "react-multi-carousel/lib/styles.css";
@@ -9,7 +9,6 @@ class TheatreBlock extends React.Component {
   render() {
     const responsive = {
       superLargeDesktop: {
-        // the naming can be any, depends on you.
         breakpoint: { max: 4000, min: 3000 },
         items: 5
       },
@@ -27,40 +26,40 @@ class TheatreBlock extends React.Component {
       }
     };
     return (
-      <div className="theatre-block">
-        <h2 className="main-header">Театр</h2>
-        {/* <Carousel responsive={responsive}>
-          <div>
-            <img
-              src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
-              alt=""
-            />
-          </div>
-        </Carousel> */}
-        <div className="theatre-container">
-          <div className="spinner-wrapper">
-            <Spinner animation="border" role="status">
-              <span className="sr-only"></span>
-            </Spinner>
-          </div>
+      <div className="Theatre">
+        <h2 className="Theatre-Header">Театр</h2>
+        {/* <div className="Spinner-Wrap">
+          <Spinner animation="border" role="status">
+            <span className="sr-only"></span>
+          </Spinner>
+        </div> */}
+        <div className="Theatre-Carousel-Wrap">
+          <Carousel responsive={responsive} className="Theatre-Carousel">
+            <div>
+              <img
+                src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://static.ngs.ru/news/99/preview/458dffc733148efe155587799d825ec609c715af_720_405_c.png"
+                alt=""
+              />
+            </div>
+          </Carousel>
         </div>
       </div>
     );

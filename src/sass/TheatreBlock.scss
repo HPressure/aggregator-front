@@ -7,8 +7,9 @@
   .Theatre-Carousel-Wrap {
     @include mainContainer;
     .Theatre-Carousel {
-      width: 100%;
-      height: 400px;
+      width: 1540px;
+      height: min-content;
     }
   }
 }
+@import "./TheatreCard";

@@ -5,7 +5,7 @@ function HomePage(props) {
   return (
     <>
       <NewsBlock />
-      {/* <TheatreBlock /> */}
+      <TheatreBlock />
     </>
   );
 }

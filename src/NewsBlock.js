@@ -45,7 +45,14 @@ class NewsBlock extends React.Component {
     });
     return (
       <div className="News">
-        <h2 className="News-Header">Новости</h2>
+        <h2
+          className="News-Header"
+          style={{
+            maxWidth: this.state.newsBlockState && "100%"
+          }}
+        >
+          Новости
+        </h2>
         <div
           className="News-Container"
           style={{

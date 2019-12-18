@@ -1,0 +1,29 @@
+$border-rad: 20px;
+.TheatreCard {
+  position: relative;
+  width: 304px;
+  background: #fff;
+  overflow: scroll;
+  overflow: hidden;
+  // background-clip: border-box;
+  border: 1px solid #ebecec;
+  border-radius: 20px;
+  .TheatreCard-Img {
+    display: block;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    height: auto;
+  }
+  .TheatreCard-Info {
+    border-radius: $border-rad $border-rad 0 0;
+    height: 200px;
+    background: transparent;
+    overflow: scroll;
+    padding: 15px;
+    .TheatreCard-Info-Title {
+      font-size: 20px;
+    }
+    .TheatreCard-Info-Description {
+    }
+  }
+}

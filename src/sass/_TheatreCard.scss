@@ -1,11 +1,10 @@
 $border-rad: 20px;
 .TheatreCard {
-  position: relative;
-  width: 304px;
+  width: 100%;
+  max-width: 304px;
   background: #fff;
   overflow: scroll;
   overflow: hidden;
-  // background-clip: border-box;
   border: 1px solid #ebecec;
   border-radius: 20px;
   .TheatreCard-Img {

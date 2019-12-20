@@ -3,7 +3,8 @@ import "./sass/NewsBlock.scss";
 import NewsCard from "./NewsCard";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
-import * as api from "./logic/getData";
+import Api from "./logic/Api";
+import NetworkError from "./NetworkError";
 class NewsBlock extends React.Component {
   state = {
     newsBlockState: 0,
@@ -16,12 +17,18 @@ class NewsBlock extends React.Component {
       newsBlockData: [],
       newsBtnState: 0
     });
-    api.get29().then(jsonData => {
-      this.setState({
-        newsBlockData: jsonData,
-        newsBlockState: jsonData.length && 1
+    Api.get29()
+      .then(data => {
+        this.setState({
+          newsBlockData: data,
+          newsBlockState: data.length && 1
+        });
+      })
+      .catch(() => {
+        this.setState({
+          newsBlockState: undefined
+        });
       });
-    });
     // fetchApi("https://ruskino29.ru/api/v2/site/getSite")
     //   .then(data => data.json())
     //   .then(data => console.log(data));
@@ -33,6 +40,26 @@ class NewsBlock extends React.Component {
     });
   };
   render() {
+    let styles = {
+      NewsHeader: {
+        maxWidth:
+          (this.state.newsBlockState == undefined ||
+            this.state.newsBlockState) &&
+          "100%"
+      },
+      Spinner: {
+        display:
+          (this.state.newsBlockState == undefined ||
+            this.state.newsBlockState) &&
+          "none"
+      },
+      NewsButtonExpand: {
+        display: this.state.newsBlockState ? "block" : "none"
+      },
+      NetworkError: {
+        display: this.state.newsBlockState != undefined && "none"
+      }
+    };
     const News = this.state.newsBlockData.map((item, i) => {
       return (
         <NewsCard
@@ -45,12 +72,7 @@ class NewsBlock extends React.Component {
     });
     return (
       <div className="News">
-        <h2
-          className="News-Header"
-          style={{
-            maxWidth: this.state.newsBlockState && "100%"
-          }}
-        >
+        <h2 className="News-Header" style={styles.NewsHeader}>
           Новости
         </h2>
         <div
@@ -60,11 +82,7 @@ class NewsBlock extends React.Component {
           }}
         >
           <div className="Spinner-Wrap">
-            <Spinner
-              animation="border"
-              role="status"
-              style={{ display: this.state.newsBlockState && "none" }}
-            >
+            <Spinner animation="border" role="status" style={styles.Spinner}>
               <span className="sr-only"></span>
             </Spinner>
           </div>
@@ -72,13 +90,14 @@ class NewsBlock extends React.Component {
           {News}
         </div>
         <Button
-          style={{ display: this.state.newsBlockState == false && "none" }}
+          style={styles.NewsButtonExpand}
           variant="outline-primary"
           onClick={this.handleExpandNewsClick}
           className="News-Button News-Button_expand"
         >
           {this.state.newsBtnState ? "Свернуть" : "Больше новостей"}
         </Button>
+        <NetworkError style={styles.NetworkError} />
       </div>
     );
   }

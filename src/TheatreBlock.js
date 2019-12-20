@@ -40,16 +40,9 @@ class TheatreBlock extends React.Component {
             infinite={true}
             autoPlay={true}
             className="Theatre-Carousel"
+            // centerMode={true}
+            // customTransition="all infinite linear"
           >
-            <TheatreCard
-              img="https://arhdrama.culture29.ru/upload/resize_cache/iblock/016/304_218_2/_-_.jpg"
-              title="Доктор Айболит"
-              description="Футуристическая сказка (камерная сцена)
-По сказке К. Чуковского
-Режиссёр - Алексей Ермилышев Футуристическая сказка (камерная сцена)
-По сказке К. Чуковского
-Режиссёр - Алексей Ермилышев"
-            />
             <TheatreCard
               img="https://arhdrama.culture29.ru/upload/resize_cache/iblock/016/304_218_2/_-_.jpg"
               title="Доктор Айболит"

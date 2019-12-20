@@ -1,9 +1,9 @@
 @mixin mainBlock {
   display: flex;
   flex-flow: column;
-  max-width: 80%;
+  // max-width: 80%;
   min-width: min-content;
-  width: 80%;
+  width: 100%;
   margin-bottom: 30px;
 }
 @mixin headerMainStyle {

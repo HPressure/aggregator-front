@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "./Header";
 import About from "./About";
 import HomePage from "./HomePage";
+import Footer from "./Footer";
 
 import "./sass/Page.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -24,6 +25,9 @@ function Page(props) {
           </Route>
         </Switch>
       </main>
+      <div className="Page-Footer">
+        <Footer />
+      </div>
     </Router>
   );
 }

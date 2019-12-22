@@ -2,6 +2,7 @@
 @import "./custom-bootstrap";
 .News {
   @include mainBlock;
+  margin: 0 auto;
   .News-Header {
     @include headerMainStyle;
   }

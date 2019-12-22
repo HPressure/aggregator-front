@@ -1,28 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap");
+
 $border-rad: 20px;
+.TheatreDate {
+  padding-left: 10px;
+  font-size: 20px;
+}
 .TheatreCard {
+  position: relative;
   width: 100%;
+  min-height: 417px;
+  height: 416px;
   max-width: 304px;
   background: #fff;
   overflow: scroll;
   overflow: hidden;
   border: 1px solid #ebecec;
-  border-radius: 20px;
-  .TheatreCard-Img {
-    display: block;
-    width: 100%;
-    border-radius: 0 0 10px 10px;
-    height: auto;
+  border-radius: $border-rad;
+  .TheatreCard-Img-Wrap {
+    position: relative;
+    height: min-content;
+    .TheatreCard-Img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .TheatreCard-Time {
+      position: absolute;
+      left: 0;
+      font-size: 1.4rem;
+      top: 15%;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      color: #fff;
+      border-radius: 0 0.1em 0.1em 0;
+      padding: 0.2em 0.3em 0.2em 1em;
+      font-family: "Roboto Mono", monospace;
+      background: #f44336;
+      z-index: 1;
+    }
   }
   .TheatreCard-Info {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
     border-radius: $border-rad $border-rad 0 0;
-    height: 200px;
-    background: transparent;
-    overflow: scroll;
-    padding: 15px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 0 15px;
+    z-index: 2;
+    top: 216px;
+    transition: top 0.2s ease-in;
     .TheatreCard-Info-Title {
       font-size: 20px;
+      margin: 0.5rem 0;
     }
     .TheatreCard-Info-Description {
+      margin-bottom: 1rem;
     }
+    .TheatreCard-Info-Buttons {
+      margin: auto 0;
+    }
+  }
+  &:hover > .TheatreCard-Info {
+    overflow: scroll;
+    top: 0;
   }
 }

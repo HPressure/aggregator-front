@@ -1,11 +1,12 @@
 .NewsCard {
   position: relative;
   cursor: pointer;
-  height: 250px;
+  height: min-content;
   width: 445px;
   overflow: hidden;
   margin-right: 20px;
   margin-bottom: 20px;
+  box-sizing: border-box;
   .NewsCard-Link {
     display: block;
     &:hover > .NewsCard-Link-Img {
@@ -31,6 +32,23 @@
         color: #fff;
         font-size: 1.5rem;
         margin: inherit;
+      }
+    }
+  }
+}
+@include mobile {
+  .NewsCard {
+    margin-right: 0;
+    .NewsCard-Link {
+      &:hover > .NewsCard-Link-Img {
+        pointer-events: none;
+      }
+      .NewsCard-Link-Img {
+      }
+      .NewsCard-Link-Title-Wrap {
+        .NewsCard-Link-Title {
+          font-size: 1.3rem;
+        }
       }
     }
   }

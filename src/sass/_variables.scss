@@ -1,16 +1,29 @@
+$media: (
+  "mobile": 767px,
+  "tablet": 1024px,
+  "desktop": 1920px
+);
+@function media-type($type) {
+  @return map-get($media, $type);
+}
+
+@mixin mobile {
+  @media (max-width: media-type(mobile)) {
+    @content;
+  }
+}
+
 @mixin mainBlock {
   display: flex;
   flex-flow: column;
-  // max-width: 80%;
-  min-width: min-content;
-  width: 100%;
+  max-width: 80%;
   margin-bottom: 30px;
 }
 @mixin headerMainStyle {
   padding-bottom: 10px;
   border-bottom: 1px solid #ebecec;
-  min-width: min-content;
-  max-width: min-content;
+  min-width: fit-content;
+  max-width: fit-content;
   transition: max-width 1s ease-in;
 }
 @mixin mainContainer {

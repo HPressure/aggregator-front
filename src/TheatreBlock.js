@@ -4,80 +4,101 @@ import Carousel from "react-multi-carousel";
 import Spinner from "react-bootstrap/Spinner";
 import "react-multi-carousel/lib/styles.css";
 import TheatreCard from "./TheatreCard";
+import "./logic/Api";
+import Api from "./logic/Api";
 
 class TheatreBlock extends React.Component {
-  state = {};
+  state = {
+    theatreBlockData: [],
+    theatreBlockState: 0
+  };
+  componentDidMount() {
+    this.setState({
+      theatreBlockData: []
+    });
+    Api.getArhDrama()
+      .then(data => {
+        this.setState({
+          theatreBlockData: data,
+          theatreBlockState: data.length && 1
+        });
+      })
+      .catch(() => {
+        this.setState({
+          theatreBlockState: undefined
+        });
+      });
+  }
   render() {
-    const responsive = {
-      superLargeDesktop: {
-        breakpoint: { max: 4000, min: 3000 },
-        items: 15
+    let styles = {
+      Spinner: {
+        display:
+          (this.state.theatreBlockState == undefined ||
+            this.state.theatreBlockState) &&
+          "none"
       },
-      desktop: {
-        breakpoint: { max: 3000, min: 1024 },
+      TheatreCarousel: {
+        display:
+          (this.state.theatreBlockState == undefined ||
+            !this.state.theatreBlockState) &&
+          "none"
+      }
+    };
+    const Shows = this.state.theatreBlockData.map((item, i) => {
+      return (
+        <TheatreCard
+          key={i}
+          title={item.Title}
+          description={item.Description}
+          img={item.Img}
+          hour={item.Hour}
+          date={item.Date}
+        />
+      );
+    });
+    const responsive = {
+      var1: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 8
+      },
+      var2: {
+        breakpoint: { max: 2000, min: 1800 },
+        items: 6
+      },
+      var3: {
+        breakpoint: { max: 1800, min: 1100 },
         items: 4
       },
-      tablet: {
-        breakpoint: { max: 1024, min: 464 },
+      var4: {
+        breakpoint: { max: 1100, min: 850 },
+        items: 3
+      },
+      var5: {
+        breakpoint: { max: 850, min: 600 },
         items: 2
       },
-      mobile: {
-        breakpoint: { max: 464, min: 0 },
+      var6: {
+        breakpoint: { max: 600, min: 320 },
         items: 1
       }
     };
     return (
       <div className="Theatre">
-        <h2 className="Theatre-Header">Театр</h2>
-        {/* <div className="Spinner-Wrap">
-          <Spinner animation="border" role="status">
+        <h2 className="Theatre-Header">Театр Драмы</h2>
+        <div className="Spinner-Wrap">
+          <Spinner animation="border" role="status" style={styles.Spinner}>
             <span className="sr-only"></span>
           </Spinner>
-        </div> */}
+        </div>
         <div className="Theatre-Carousel-Wrap">
           <Carousel
             responsive={responsive}
             infinite={true}
             autoPlay={true}
             className="Theatre-Carousel"
-            // centerMode={true}
-            // customTransition="all infinite linear"
+            style={styles.TheatreCarousel}
           >
-            <TheatreCard
-              img="https://arhdrama.culture29.ru/upload/resize_cache/iblock/016/304_218_2/_-_.jpg"
-              title="Доктор Айболит"
-              description="Футуристическая сказка (камерная сцена)
-По сказке К. Чуковского
-Режиссёр - Алексей Ермилышев"
-            />
-            <TheatreCard
-              img="https://arhdrama.culture29.ru/upload/resize_cache/iblock/016/304_218_2/_-_.jpg"
-              title="Доктор Айболит"
-              description="Футуристическая сказка (камерная сцена)
-По сказке К. Чуковского
-Режиссёр - Алексей Ермилышев"
-            />
-            <TheatreCard
-              img="https://arhdrama.culture29.ru/upload/resize_cache/iblock/016/304_218_2/_-_.jpg"
-              title="Доктор Айболит"
-              description="Футуристическая сказка (камерная сцена)
-По сказке К. Чуковского
-Режиссёр - Алексей Ермилышев"
-            />
-            <TheatreCard
-              img="https://arhdrama.culture29.ru/upload/resize_cache/iblock/016/304_218_2/_-_.jpg"
-              title="Доктор Айболит dffgdfsgsdf"
-              description="Футуристическая сказка (камерная сцена)
-По сказке К. Чуковского
-Режиссёр - Алексей Ермилышев"
-            />
-            <TheatreCard
-              img="https://arhdrama.culture29.ru/upload/resize_cache/iblock/016/304_218_2/_-_.jpg"
-              title="Доктор Айболит"
-              description="Футуристическая сказка (камерная сцена)
-По сказке К. Чуковского
-Режиссёр - Алексей Ермилышев"
-            />
+            {Shows}
           </Carousel>
         </div>
       </div>

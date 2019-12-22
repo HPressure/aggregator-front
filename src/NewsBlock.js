@@ -47,6 +47,9 @@ class NewsBlock extends React.Component {
             this.state.newsBlockState) &&
           "100%"
       },
+      NewsContainer: {
+        maxHeight: this.state.newsBtnState ? "min-content" : "270px"
+      },
       Spinner: {
         display:
           (this.state.newsBlockState == undefined ||
@@ -75,12 +78,7 @@ class NewsBlock extends React.Component {
         <h2 className="News-Header" style={styles.NewsHeader}>
           Новости
         </h2>
-        <div
-          className="News-Container"
-          style={{
-            maxHeight: this.state.newsBtnState ? "min-content" : "270px"
-          }}
-        >
+        <div className="News-Container" style={styles.NewsContainer}>
           <div className="Spinner-Wrap">
             <Spinner animation="border" role="status" style={styles.Spinner}>
               <span className="sr-only"></span>

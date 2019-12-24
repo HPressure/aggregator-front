@@ -12,4 +12,20 @@
   .Page-Footer {
     flex: 0;
   }
+  .Page-BtnToTop {
+    position: fixed;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: -2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    bottom: 30px;
+    right: 30px;
+    color: #212529;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+  }
 }

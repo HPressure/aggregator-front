@@ -7,7 +7,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Logo from "./Logo";
 import "./sass/Header.scss";
-import "@fortawesome/fontawesome-free/css/all.css";
+
 function AppHeader() {
   return (
     <React.Fragment>
@@ -39,7 +39,7 @@ function AppHeader() {
           <Form inline>
             <FormControl type="text" placeholder="Поиск" className="mr-sm-2" />
             <Button variant="outline-secondary">
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
             </Button>
           </Form>
         </Navbar.Collapse>

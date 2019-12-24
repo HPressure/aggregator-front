@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import "./sass/NewsBlock.scss";
-import NewsCard from "./NewsCard";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import Api from "./logic/Api";
 import NetworkError from "./NetworkError";
+const NewsCard = React.lazy(() => import("./NewsCard"));
 class NewsBlock extends React.Component {
   state = {
     newsBlockState: 0,
@@ -65,12 +65,20 @@ class NewsBlock extends React.Component {
     };
     const News = this.state.newsBlockData.map((item, i) => {
       return (
-        <NewsCard
-          key={i}
-          img={item.newsImg}
-          title={item.newsTitle}
-          url={item.newsURL}
-        />
+        <Suspense
+          fallback={
+            <Spinner animation="border" role="status">
+              <span className="sr-only"></span>
+            </Spinner>
+          }
+        >
+          <NewsCard
+            key={i}
+            img={item.newsImg}
+            title={item.newsTitle}
+            url={item.newsURL}
+          />
+        </Suspense>
       );
     });
     return (
@@ -79,11 +87,11 @@ class NewsBlock extends React.Component {
           Новости
         </h2>
         <div className="News-Container" style={styles.NewsContainer}>
-          <div className="Spinner-Wrap">
+          {/* <div className="Spinner-Wrap">
             <Spinner animation="border" role="status" style={styles.Spinner}>
               <span className="sr-only"></span>
             </Spinner>
-          </div>
+          </div> */}
 
           {News}
         </div>

@@ -14,10 +14,15 @@ function TheatreCard(props) {
           <h3 className="TheatreCard-Info-Title">{props.title}</h3>
           <p className="TheatreCard-Info-Description">{props.description}</p>
           <div className="TheatreCard-Info-Buttons">
-            <Button variant="danger" block>
+            <Button href={props.buyUrl} target="_blank" variant="danger" block>
               Купить билет
             </Button>
-            <Button variant="outline-danger" block>
+            <Button
+              href={props.url}
+              target="_blank"
+              variant="outline-danger"
+              block
+            >
               Подробнее
             </Button>
           </div>

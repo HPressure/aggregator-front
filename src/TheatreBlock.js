@@ -37,6 +37,12 @@ class TheatreBlock extends React.Component {
             this.state.theatreBlockState) &&
           "none"
       },
+      TheatreHeader: {
+        maxWidth:
+          (this.state.theatreBlockState == undefined ||
+            this.state.theatreBlockState) &&
+          "80%"
+      },
       TheatreCarousel: {
         display:
           (this.state.theatreBlockState == undefined ||
@@ -51,6 +57,8 @@ class TheatreBlock extends React.Component {
           title={item.Title}
           description={item.Description}
           img={item.Img}
+          buyUrl={item.BuyUrl}
+          url={item.Url}
           hour={item.Hour}
           date={item.Date}
         />
@@ -84,7 +92,9 @@ class TheatreBlock extends React.Component {
     };
     return (
       <div className="Theatre">
-        <h2 className="Theatre-Header">Театр Драмы</h2>
+        <h2 className="Theatre-Header" style={styles.TheatreHeader}>
+          Театр Драмы
+        </h2>
         <div className="Spinner-Wrap">
           <Spinner animation="border" role="status" style={styles.Spinner}>
             <span className="sr-only"></span>

@@ -6,7 +6,7 @@
   .News-Header {
     @include headerMainStyle;
   }
-  .News-Container {
+  .News-NewsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

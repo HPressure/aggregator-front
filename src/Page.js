@@ -2,14 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Header from "./Header";
-import About from "./About";
+import AboutPage from "./AboutPage";
 import HomePage from "./HomePage";
+import ContactPage from "./ContactPage";
 import Footer from "./Footer";
 
 import "./sass/Page.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/_custom-bootstrap.scss";
-import { render } from "react-dom";
 
 class Page extends React.Component {
   state = {
@@ -49,7 +49,10 @@ class Page extends React.Component {
               <HomePage />
             </Route>
             <Route path="/about">
-              <About />
+              <AboutPage />
+            </Route>
+            <Route path="/contacts">
+              <ContactPage />
             </Route>
           </Switch>
         </main>

@@ -4,12 +4,9 @@
     @include headerMainStyle;
     margin-left: 10%;
   }
-  .Theatre-Carousel-Wrap {
+  .Theatre-Carousel {
     @include mainContainer;
     width: 100%;
-    .Theatre-Carousel {
-      height: min-content;
-    }
   }
 }
 @import "./TheatreCard";

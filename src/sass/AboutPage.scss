@@ -1,0 +1,15 @@
+@import "./variables";
+.AboutPage {
+  height: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: $page-margin-top;
+  .AboutPage-Header {
+  }
+  .AboutPage-Content {
+    margin-top: 20px;
+    .AboutPage-Content-Paragraph {
+      line-height: 1.5rem;
+    }
+  }
+}

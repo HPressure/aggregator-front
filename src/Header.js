@@ -33,14 +33,14 @@ function AppHeader() {
               <Link to="/about">О проекте</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/contacts">Контакты</Link>
+              <Link to="/contacts">Команда</Link>
             </Nav.Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Поиск" className="mr-sm-2" />
-            <Button variant="outline-secondary">
+            <button className="SearchButton">
               <i className="fas fa-search"></i>
-            </Button>
+            </button>
           </Form>
         </Navbar.Collapse>
       </Navbar>

@@ -3,6 +3,7 @@ $media: (
   "tablet": 1024px,
   "desktop": 1920px
 );
+$page-margin-top: 30px;
 @function media-type($type) {
   @return map-get($media, $type);
 }
@@ -30,7 +31,8 @@ $media: (
   margin-top: 20px;
   overflow: hidden;
 }
-%Button {
+
+.Button {
   cursor: pointer;
   display: block;
   width: 100%;
@@ -43,10 +45,8 @@ $media: (
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.ButtonLink {
-  @extend %Button;
-}
-.ButtonLink_outline {
-  @extend %Button;
-  background: transparent;
+.Button_icon {
+  @extend .Button;
+  border: none;
+  background: none;
 }

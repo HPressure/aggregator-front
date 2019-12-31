@@ -1,12 +1,14 @@
 import React from "react";
-import NewsBlock from "./NewsBlock";
-import TheatreBlock from "./TheatreBlock";
+
+import "./sass/HomePage.scss";
+import News from "./News";
+import Theatre from "./Theatre";
 function HomePage(props) {
   return (
-    <>
-      <NewsBlock />
-      <TheatreBlock />
-    </>
+    <div className="HomePage">
+      <News />
+      <Theatre />
+    </div>
   );
 }
 export default HomePage;

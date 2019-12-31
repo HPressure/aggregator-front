@@ -1,0 +1,44 @@
+$width: 200px;
+$height: calc(#{$width} * 1.25);
+.ContactCard {
+  display: flex;
+  width: fit-content;
+  .ContactCard-Left {
+    display: flex;
+    flex-flow: column;
+    width: $width;
+    height: $height;
+    border-radius: 0 0 calc(#{$height}/ 2) calc(#{$height}/ 2);
+    overflow: hidden;
+    .ContactCard-Left-Inner {
+      position: relative;
+      background: linear-gradient(
+        rgba(174, 110, 217, 1) 0%,
+        rgba(237, 92, 92, 1) 48%,
+        rgba(255, 189, 95, 1) 100%
+      );
+      background-attachment: fixed;
+      margin-top: auto;
+      width: $width;
+      height: $width;
+      border-radius: 50%;
+      .ContactCard-Left-Inner-Img {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .ContactCard-Right {
+    max-width: 500px;
+    margin-left: 50px;
+    padding-top: calc(#{$width} * 0.25);
+    .ContactCard-Right-Name {
+      font-size: 1.5rem;
+    }
+    .ContactCard-Right-Info {
+    }
+  }
+}

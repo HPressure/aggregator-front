@@ -1,15 +1,16 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Header from "./Header";
-import AboutPage from "./AboutPage";
-import HomePage from "./HomePage";
-import ContactPage from "./ContactPage";
 import Footer from "./Footer";
 
 import "./sass/Page.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/_custom-bootstrap.scss";
+
+const AboutPage = lazy(() => import("./AboutPage"));
+const HomePage = lazy(() => import("./HomePage"));
+const ContactPage = lazy(() => import("./ContactPage"));
 
 class Page extends React.Component {
   state = {
@@ -46,13 +47,19 @@ class Page extends React.Component {
         <main className="Page-Main">
           <Switch>
             <Route exact path="/">
-              <HomePage />
+              <Suspense fallback={<div></div>}>
+                <HomePage />
+              </Suspense>
             </Route>
             <Route path="/about">
-              <AboutPage />
+              <Suspense fallback={<div></div>}>
+                <AboutPage />
+              </Suspense>
             </Route>
             <Route path="/contacts">
-              <ContactPage />
+              <Suspense fallback={<div></div>}>
+                <ContactPage />
+              </Suspense>
             </Route>
           </Switch>
         </main>
